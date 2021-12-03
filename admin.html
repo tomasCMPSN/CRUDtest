@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Catálago de electrodomésticos">
+    <meta name="keywords" content="electrodomésticos, catálago, lavarropa, microondas, compras">
+    <meta name="author" content="Tomás Campusano">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Catálago</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark fondoNegro px-2 py-4">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">Catálago</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="admin.html">Admin</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Electrodoméstico"
+                            aria-label="Search">
+                        <button class="btn btn-success" type="submit">Buscar</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container">
+        <section>
+            <h1 class="display-3 m-4 text-center">Administrar productos</h1>
+            <hr>
+            <form class="mb-3" id="formProduct">
+                <div class="mb-3">
+                    <label for="code" class="form-label">Código</label>
+                    <input type="text" class="form-control" id="code" placeholder="1234">
+                </div>
+                <div class="mb-3">
+                    <label for="product" class="form-label">Producto</label>
+                    <input type="text" class="form-control" id="product" placeholder="Electrodoméstico.">
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Descripcion</label>
+                    <textarea class="form-control" id="description" rows="3" placeholder="Descripción del producto."></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="url" class="form-label">URL</label>
+                    <input type="text" class="form-control" id="url">
+                </div>
+                <button type="submit" class="btn btn-success">Guardar</button>
+                <button class="btn btn-primary">Nuevo</button>
+            </form>
+            <div class="alert alert-danger mt-4 d-none" role="alert" id="msgAlert">
+                Complete los datos.
+            </div>
+        </section>
+        <div>
+            <h1 class="display-3 text-center">Tabla de productos</h1>
+            <hr>
+        </div>
+        <section class="table-responsive">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Cod.</th>
+                    <th scope="col">Producto</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">URL</th>
+                    <th scope="col">Acciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Aire acondicionado BGH Silent Air split frío/calor 3000 frigorías blanco 220V BS35WCCR</td>
+                    <td>Aire acondicionado BGH Silent Air split frío/calor 3000 frigorías blanco 220V BS35WCCR</td>
+                    <td>https://http2.mlstatic.com/D_NQ_NP_694117-MLA40282485103_122019-O.webp</td>
+                    <td>
+                        <button class="btn btn-warning w-100 mb-1">Editar</button>
+                        <button class="btn btn-danger w-100">Borrar</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+        </section>
+    </main>
+    <footer class="fondoNegro">
+        <div class="d-flex flex-column align-items-center p-4">
+            <a href="index.html" class="text-white text-decoration-none">Inicio</a>
+            <a href="admin.html" class="text-white text-decoration-none">Admin</a>
+        </div>
+    </footer>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/admin.js" type="module"></script>
+</body>
+
+</html>

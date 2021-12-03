@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Catálago de electrodomésticos">
+    <meta name="keywords" content="electrodomésticos, catálago, lavarropa, microondas, compras">
+    <meta name="author" content="Tomás Campusano">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Catálago</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark fondoNegro px-2 py-4">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">Catálago</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="admin.html">Admin</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Electrodoméstico"
+                            aria-label="Search">
+                        <button class="btn btn-success" type="submit">Buscar</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container">
+        <div>
+            <h1 class="display-1 lead text-center">Productos</h1>
+            <hr>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-4 p-3">
+                <div class="card h-100">
+                  <img src="https://http2.mlstatic.com/D_NQ_NP_694117-MLA40282485103_122019-O.webp" class="card-img-top" alt="Aire">
+                  <div class="card-body">
+                    <h5 class="card-title">Aire acondicionado BGH Silent Air split frío/calor 3000 frigorías blanco 220V BS35WCCR</h5>
+                    <p class="card-text">Aire acondicionado BGH Silent Air split frío/calor 3000 frigorías blanco 220V BS35WCCR</p>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="fondoNegro">
+        <div class="d-flex flex-column align-items-center p-4">
+            <a href="index.html" class="text-white text-decoration-none">Inicio</a>
+            <a href="admin.html" class="text-white text-decoration-none">Admin</a>
+        </div>
+    </footer>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>
