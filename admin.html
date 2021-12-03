@@ -10,6 +10,7 @@
     <meta name="author" content="Tomás Campusano">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Catálago</title>
 </head>
 
@@ -63,7 +64,7 @@
                     <input type="text" class="form-control" id="url">
                 </div>
                 <button type="submit" class="btn btn-success">Guardar</button>
-                <button class="btn btn-primary">Nuevo</button>
+                <button class="btn btn-primary" id="btnNew">Nuevo</button>
             </form>
             <div class="alert alert-danger mt-4 d-none" role="alert" id="msgAlert">
                 Complete los datos.
@@ -84,17 +85,7 @@
                     <th scope="col">Acciones</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Aire acondicionado BGH Silent Air split frío/calor 3000 frigorías blanco 220V BS35WCCR</td>
-                    <td>Aire acondicionado BGH Silent Air split frío/calor 3000 frigorías blanco 220V BS35WCCR</td>
-                    <td>https://http2.mlstatic.com/D_NQ_NP_694117-MLA40282485103_122019-O.webp</td>
-                    <td>
-                        <button class="btn btn-warning w-100 mb-1">Editar</button>
-                        <button class="btn btn-danger w-100">Borrar</button>
-                    </td>
-                  </tr>
+                <tbody id="tableProducts">
                 </tbody>
               </table>
         </section>
