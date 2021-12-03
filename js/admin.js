@@ -16,7 +16,7 @@ campURL.addEventListener(`blur`, () => { validateURL(campURL)});
 formProduct.addEventListener(`submit`, saveProduct);
 btnNew.addEventListener(`click`, cleanForm);
 
-inicialLoad();
+initialLoad();
 
 function saveProduct(e){
     e.preventDefault();
@@ -24,7 +24,7 @@ function saveProduct(e){
         if(updateMode == false){
             createProduct();
         }else{
-
+            updateProduct();
         }
     }
 }
@@ -62,18 +62,57 @@ function createRow(product){
     <td>${product.description}</td>
     <td>${product.url}</td>
     <td>
-        <button class="btn btn-warning w-100 mb-1">Editar</button>
-        <button class="btn btn-danger w-100">Borrar</button>
+        <button class="btn btn-warning w-100 mb-1" onclick="preparateProductUpdate(${product.code})">Editar</button>
+        <button class="btn btn-danger w-100" onclick="deleteProduct(${product.code})">Borrar</button>
     </td>
   </tr>`;
 }
 
-function inicialLoad(){
+function initialLoad(){
     if(listProducts.length > 0){
         listProducts.forEach((itemProduct) =>{createRow(itemProduct)});
     }
 }
 
 window.preparateProductUpdate = (code) =>{
-    
+    let findProduct = listProducts.find((itemProduct)=>{return itemProduct.code == code});
+    campCode.value = findProduct.code;
+    campProduct.value = findProduct.product;
+    campDescription.value = findProduct.description;
+    campURL.value = findProduct.url;
+    updateMode = true;
+}
+
+function deleteTable(){
+    let table = document.querySelector(`#tableProducts`);
+    table.innerHTML = ``;
+}
+
+function updateProduct(){
+    let indexProduct = listProducts.findIndex((itemProduct)=>{return itemProduct.code == campCode.value});
+    listProducts[indexProduct].product = campProduct.value;
+    listProducts[indexProduct].description = campDescription.value;
+    listProducts[indexProduct].url = campURL.value;
+    saveLocalStorage();
+    Swal.fire(
+        'Good job!',
+        'You clicked the button!',
+        'success'
+    );
+    cleanForm();
+    deleteTable();
+    listProducts.forEach((itemProduct) =>{createRow(itemProduct)});
+}
+
+window.deleteProduct = function (code){
+    let arrayFindProduct = listProducts.filter((itemProduct)=>{return itemProduct.code != code});
+    listProducts = arrayFindProduct;
+    saveLocalStorage();
+    deleteTable();
+    listProducts.forEach((itemProduct)=>{createRow(itemProduct)});
+    Swal.fire(
+        'Good job!',
+        'You clicked the button!',
+        'success'
+    );
 }
