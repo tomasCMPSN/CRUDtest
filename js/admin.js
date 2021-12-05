@@ -17,6 +17,7 @@ formProduct.addEventListener(`submit`, saveProduct);
 btnNew.addEventListener(`click`, cleanForm);
 
 initialLoad();
+createGUID();
 
 function saveProduct(e){
     e.preventDefault();
@@ -39,6 +40,8 @@ function cleanForm(){
     campProduct.className = `form-control`;
     campDescription.className = `form-control`;
     campURL.className = `form-control`;
+    updateMode = false;
+    createGUID();
 }
 
 function createProduct(){
@@ -115,4 +118,16 @@ window.deleteProduct = function (code){
         'You clicked the button!',
         'success'
     );
+}
+
+function createGUID(){
+    function thing(){
+        function random(){
+            return Math.floor(Math.random() * (99999999 - 10000000) + 10000000)
+        }
+        return random();
+    }
+    let uuidd = thing();
+    campCode.value = uuidd;
+    campCode.setAttribute('disabled', '');
 }
